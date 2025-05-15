@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #efefef;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 0;
+  border: 1px solid black;
+  background: lightpink;
+
+  transition: all .2s ease-in;
+}
+
+.btn:active,
+.btn:hover {
+  background-color: black;
+  color: lightpink;
+
+  transition: all .2s ease-out;
+}
+
+.btn span {
+  margin-left: 10px;
+}
+
+.btn_options {
+  background: white;
+}
+
+.btn_options:active,
+.btn_options:hover {
+  background: lightgray;
+  color: black;
+}
+
+.header {
+  background: white;
+  border-bottom: 1px solid black;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.logo_header {
+}
+
+.main {
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem 3rem;
+  border: 1px solid black;
+}
+
+.card__header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card__desc {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.card__title {
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+
+.card__subtitle {
+  font-size: 1.4rem;
+}
+
+.card__controls {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.popup {
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.popup_option {
+  padding: 1rem;
+  top: 4.5rem;
+  left: -8rem;
+  height: 11rem;
+  width: 12rem;
+}
+
+.popup_hidden {
+  display: none;
+}
+
+.card__progress {
+}
+
+.card__progress-bar {
+  width: 100%;
+}
+
+.card__progress-bar_stroke {
+  height: 2rem;
+  border: 1px solid black;
+
+}
+
+.card__progress-bar_body {
+  height: 1.4rem;
+  width: 10%;
+  background: yellowgreen;
+  margin: 2px;
+}
+
+.card__finance {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.card__deposit {
+}
+
+.card__goal {
+}
+
