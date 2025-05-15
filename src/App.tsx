@@ -1,33 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <header className="header">
+        <div className="container">
+          <div className="header__inner">
+            <div className="logo logo_header">piggy-bank</div>
+            <button className="btn btn_header">Create a Goal <span>+</span></button>
+          </div>
+        </div>
+      </header>
+
+      <main className="main">
+        <div className="container">
+
+          <div className="cards">
+            <div className="card">
+              <div className="card__header">
+                <div className="card__desc">
+                  <div className="card__title">Dream Trip</div>
+                  <div className="card__subtitle">Travel opens up new horizons</div>
+                </div>
+                <div className="card__controls">
+                  <button className="btn btn_card btn_options">...</button>
+                  <div className="popup popup_option popup_hidden">
+                    <button className="btn">Edit</button>
+                    <button className="btn">Delete</button>
+                  </div>
+                  <button className="btn btn_card btn_take">Take <span>-</span></button>
+                  <button className="btn btn_card btn_add">Add <span>+</span></button>
+                </div>
+              </div>
+
+              <div className="card__progress">
+                <div className="card__progress-bar card__progress-bar_stroke">
+                  <div className="card__progress-bar card__progress-bar_body"></div>
+                </div>
+                <div className="card__finance">
+                  <div className="card__deposit">$100</div>
+                  <div className="card__goal">$2500</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="cards">
+            <div className="card">
+              <div className="card__header">
+                <div className="card__desc">
+                  <div className="card__title">Dream Trip</div>
+                  <div className="card__subtitle">Travel opens up new horizons</div>
+                </div>
+                <div className="card__controls">
+                  <button className="btn btn_card btn_options">...</button>
+                  <div className="popup popup_option popup_hidden">
+                    <button className="btn">Edit</button>
+                    <button className="btn">Delete</button>
+                  </div>
+                  <button className="btn btn_card btn_take">Take <span>-</span></button>
+                  <button className="btn btn_card btn_add">Add <span>+</span></button>
+                </div>
+              </div>
+
+              <div className="card__progress">
+                <div className="card__progress-bar card__progress-bar_stroke">
+                  <div className="card__progress-bar card__progress-bar_body"></div>
+                </div>
+                <div className="card__finance">
+                  <div className="card__deposit">$100</div>
+                  <div className="card__goal">$2500</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </main>
     </>
   )
 }
