@@ -26,37 +26,6 @@ body {
   padding: 0 10px;
 }
 
-.btn {
-  padding: 10px 14px;
-  border-radius: 0;
-  border: 1px solid black;
-  background: lightpink;
-
-  transition: all .2s ease-in;
-}
-
-.btn:active,
-.btn:hover {
-  background-color: black;
-  color: lightpink;
-
-  transition: all .2s ease-out;
-}
-
-.btn span {
-  margin-left: 10px;
-}
-
-.btn_options {
-  background: white;
-}
-
-.btn_options:active,
-.btn_options:hover {
-  background: lightgray;
-  color: black;
-}
-
 .header {
   background: white;
   border-bottom: 1px solid black;

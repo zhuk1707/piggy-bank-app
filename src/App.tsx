@@ -1,18 +1,11 @@
 import './App.css'
+import Header from "./components/Header/Header.tsx";
 
 function App() {
 
   return (
     <>
-
-      <header className="header">
-        <div className="container">
-          <div className="header__inner">
-            <div className="logo logo_header">piggy-bank</div>
-            <button className="btn btn_header">Create a Goal <span>+</span></button>
-          </div>
-        </div>
-      </header>
+      <Header/>
 
       <main className="main">
         <div className="container">
