@@ -1,7 +1,9 @@
-export default function Dashbord() {
+import SectionTitle from "../SectionTitle/SectionTitle.tsx";
+
+export default function Dashboard() {
   return (
     <>
-      Section
+      <SectionTitle>Dashboard</SectionTitle>
     </>
   )
 }
