@@ -1,17 +1,21 @@
+import style from './Footer.module.css'
+import {Github} from "lucide-react";
 import Button from "../Button/Button.tsx";
-import {Plus} from "lucide-react";
 
-function Header () {
+
+function Footer() {
   return (
-    <header className="header">
+    <footer className={style.footer}>
       <div className="container">
-        <div className="header__inner">
-          <div className="logo logo_header">piggy-bank</div>
-          <Button title={"Create a Goal"} icon={<Plus strokeWidth={2}  size={18}/>}/>
+        <div className={style.footer__inner}>
+          <div className="logo logo_footer">piggy-bank</div>
+          <p>Made for fun by <a href="">Zhuk1707</a></p>
+
+          <Button title={"Github"} icon={<Github size={16}/>}/>
         </div>
       </div>
-    </header>
+    </footer>
   )
 }
 
-export default Header
+export default Footer
