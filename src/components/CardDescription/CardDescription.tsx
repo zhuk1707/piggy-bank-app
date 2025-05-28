@@ -2,7 +2,7 @@ import type {FC} from "react";
 
 export interface CardDescriptionProps {
   title: string,
-  subtitle: string,
+  subtitle?: string,
 }
 
 const CardDescription: FC<CardDescriptionProps> = ({title, subtitle}) => {
