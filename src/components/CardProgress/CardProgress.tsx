@@ -2,8 +2,8 @@ import ProgressBar from "../ProgressBar/ProgressBar.tsx";
 import type {FC} from "react";
 
 export interface CardProgressProps {
-  deposit: number;
   goal: number;
+  deposit?: number;
 }
 
 const CardProgress: FC<CardProgressProps> = ({ deposit, goal }) => {
