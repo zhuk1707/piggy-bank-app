@@ -3,7 +3,7 @@ import CardControls from "../CardControls/CardControls.tsx";
 import CardProgress, { type CardProgressProps } from "../CardProgress/CardProgress.tsx";
 import type { FC } from "react";
 
-interface CardProps extends CardDescriptionProps, CardProgressProps {}
+export interface CardProps extends CardDescriptionProps, CardProgressProps {}
 
 const Card: FC<CardProps> = ({ title, subtitle, deposit, goal }) => {
   return (
