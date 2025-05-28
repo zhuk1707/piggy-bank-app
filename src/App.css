@@ -1,13 +1,8 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
 
 html {
@@ -21,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -42,12 +37,6 @@ body {
 .logo {
   font-size: 3rem;
   font-weight: 900;
-}
-
-.logo_header {
-}
-
-.main {
 }
 
 .cards {
