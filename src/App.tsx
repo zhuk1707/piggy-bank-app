@@ -7,7 +7,7 @@ import {useState} from "react";
 import Modal from "./components/Modal/Modal.tsx";
 
 export default function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <>

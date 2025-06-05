@@ -1,6 +1,6 @@
 import type {FC} from "react";
 
-export interface CardDescriptionProps {
+export type CardDescriptionProps = {
   title: string,
   subtitle?: string,
 }
