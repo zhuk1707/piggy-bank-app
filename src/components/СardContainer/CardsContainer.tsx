@@ -5,7 +5,13 @@ import AppContext from "../../main.tsx";
 
 
 export default function CardsContainer() {
-  const {goalsList} = useContext(AppContext)
+  const context = useContext(AppContext)
+
+  if (!context) {
+    throw new Error("AppContext must be used within an AppProvider")
+  }
+
+  const {goalsList} = context.storage
 
   return (<>
     <SectionTitle>Goals</SectionTitle>
