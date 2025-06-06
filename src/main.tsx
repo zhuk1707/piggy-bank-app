@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client'
 import App from './App.tsx'
 
 type Goal = {
+  id: string,
   title: string,
   subtitle?: string,
   deposit?: number,
@@ -38,12 +39,12 @@ const reducer = (state: StorageState, action: Action): StorageState => {
       return {
         ...state,
         goalsList: {
-          goals: state.goalsList.goals.filter(goal => goal.title !== action.payload),
+          goals: state.goalsList.goals.filter(goal => goal.id !== action.payload),
           goalsCount: state.goalsList.goalsCount - 1,
         },
       };
     case "TOGGLE_MODAL":
-      return { ...state, creatingGoalModal: !state.creatingGoalModal };
+      return {...state, creatingGoalModal: !state.creatingGoalModal};
     default:
       return state;
   }
@@ -52,7 +53,7 @@ const reducer = (state: StorageState, action: Action): StorageState => {
 const defaultStorage: StorageState = {
   goalsList: {
     goals: [
-      {title: "Trip", subtitle: "Travel opens up new horizons :)", deposit: 100, goal: 2500},
+      {id: '1', title: "Trip", subtitle: "Travel opens up new horizons :)", deposit: 100, goal: 2500},
     ],
     goalsCount: 1
   },

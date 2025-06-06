@@ -16,8 +16,8 @@ export default function CardsContainer() {
   return (<>
     <SectionTitle>Goals</SectionTitle>
     <div className="cards">
-      {goalsList.goals.map(card => (
-        <Card key={card.title} {...card} />
+      {goalsList.goals.map((card) => (
+        <Card key={card.id} {...card} />
       ))}
     </div>
   </>)
