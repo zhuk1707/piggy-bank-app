@@ -11,7 +11,7 @@ export default function CardsContainer() {
     throw new Error("AppContext must be used within an AppProvider")
   }
 
-  const {goalsList} = context.storage
+  const {goalsList} = context.state
 
   return (<>
     <SectionTitle>Goals</SectionTitle>

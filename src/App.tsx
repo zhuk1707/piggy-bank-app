@@ -15,17 +15,11 @@ export default function App() {
     throw new Error("AppContext must be used within an AppProvider")
   }
 
-  const {storage, updateStorage} = context
+  const {state, dispatch} = context
 
-  const openModal = () => {
-    updateStorage({...storage, creatingGoalModal: true})
-  }
-
-  const closeModal = () => {
-    updateStorage({...storage, creatingGoalModal: false})
-  }
 
   const addGoal = () => {
+    //todo kick it
     const getRandomMultipleOf100 = (): number => {
       const min = 100;
       const max = 5000;
@@ -33,17 +27,21 @@ export default function App() {
     };
 
     const newGoal = {
-      title: "New Goal",
+      title: (getRandomMultipleOf100() * 1000).toString(16),
       goal: getRandomMultipleOf100(),
       deposit: getRandomMultipleOf100()
     }
 
-    updateStorage({
-      ...storage,
-      goalsList: {
-        goals: [...storage.goalsList.goals, newGoal],
-        goalsCount: storage.goalsList.goalsCount + 1
-      }
+    dispatch({
+      type: "ADD_GOAL",
+      payload: newGoal
+    })
+  }
+
+  const handleCreating = () => {
+    addGoal()
+    dispatch({
+      type: 'TOGGLE_MODAL'
     })
   }
 
@@ -51,26 +49,19 @@ export default function App() {
     <>
       <Header/>
 
-      <div className="container">
-
-        <button
-          style={{width: "100%"}}
-          onClick={addGoal}
-        >Create Goal
-        </button>
-      </div>
-
-      {storage.creatingGoalModal &&
+      {state.creatingGoalModal &&
         <Modal
           title={"Creating a goal"}
-          onClose={closeModal}
+          onClose={() => {
+            dispatch({
+              type: 'TOGGLE_MODAL'
+            })
+          }}
         >
           <Button
-            title={'Ok'}
-            onClick={() => {
-              addGoal()
-              closeModal()
-            }}/>
+            title={'Ok!'}
+            onClick={handleCreating}
+          />
         </Modal>}
 
       <main className="main">

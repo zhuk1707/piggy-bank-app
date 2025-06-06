@@ -10,11 +10,8 @@ function Header() {
     throw new Error("AppContext must be used within an AppProvider")
   }
 
-  const {storage, updateStorage} = context
+  const {dispatch} = context
 
-  const openModal = () => {
-    updateStorage({...storage, creatingGoalModal: true})
-  }
 
   return (
     <header className="header">
@@ -25,7 +22,11 @@ function Header() {
           <Button
             title={"Create a Goal"}
             icon={<Plus strokeWidth={2} size={18}/>}
-            onClick={openModal}
+            onClick={() => {
+              dispatch({
+                type: 'TOGGLE_MODAL'
+              })
+            }}
           />
         </div>
       </div>

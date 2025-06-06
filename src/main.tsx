@@ -1,4 +1,4 @@
-import {createContext, type ReactNode, StrictMode, useState} from 'react'
+import React, {createContext, type ReactNode, StrictMode, useReducer} from 'react'
 import {createRoot} from 'react-dom/client'
 import App from './App.tsx'
 
@@ -19,35 +19,57 @@ type StorageState = {
   creatingGoalModal: boolean
 }
 
+type Action =
+  | { type: "ADD_GOAL"; payload: Goal }
+  | { type: "REMOVE_GOAL"; payload: string }
+  | { type: "TOGGLE_MODAL" };
+
+const reducer = (state: StorageState, action: Action): StorageState => {
+  switch (action.type) {
+    case "ADD_GOAL":
+      return {
+        ...state,
+        goalsList: {
+          goals: [...state.goalsList.goals, action.payload],
+          goalsCount: state.goalsList.goalsCount + 1,
+        },
+      };
+    case "REMOVE_GOAL":
+      return {
+        ...state,
+        goalsList: {
+          goals: state.goalsList.goals.filter(goal => goal.title !== action.payload),
+          goalsCount: state.goalsList.goalsCount - 1,
+        },
+      };
+    case "TOGGLE_MODAL":
+      return { ...state, creatingGoalModal: !state.creatingGoalModal };
+    default:
+      return state;
+  }
+};
+
 const defaultStorage: StorageState = {
   goalsList: {
     goals: [
       {title: "Trip", subtitle: "Travel opens up new horizons :)", deposit: 100, goal: 2500},
-      // {title: "PC", deposit: 0, goal: 3000},
-      // {title: "Vans", subtitle: "New shoes", deposit: 5, goal: 70},
-      // {title: "Car", deposit: 8000, goal: 16000},
     ],
-    goalsCount: 4
+    goalsCount: 1
   },
   creatingGoalModal: false
 }
 
-// Создаем контекст с пустым значением по умолчанию
 const AppContext = createContext<{
-  storage: StorageState;
-  updateStorage: (newStorage: StorageState) => void
+  state: StorageState;
+  dispatch: React.Dispatch<Action>
 } | undefined>(undefined)
 
 
 const AppProvider = ({children}: { children: ReactNode }) => {
-  const [storage, setStorage] = useState(defaultStorage)
-
-  const updateStorage = (newStorage: StorageState) => {
-    setStorage(newStorage)
-  }
+  const [state, dispatch] = useReducer(reducer, defaultStorage)
 
   return (
-    <AppContext.Provider value={{storage, updateStorage}}>
+    <AppContext.Provider value={{state, dispatch}}>
       {children}
     </AppContext.Provider>
   )
