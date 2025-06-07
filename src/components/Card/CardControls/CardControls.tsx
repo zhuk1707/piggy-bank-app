@@ -1,7 +1,7 @@
-import Button from "../Button/Button.tsx";
+import Button from "../../Button/Button.tsx";
 import {Ellipsis, Minus, Plus, Trash2} from "lucide-react";
 import {useContext} from "react";
-import AppContext from "../../main.tsx";
+import AppContext from "../../../main.tsx";
 
 export default function CardControls({id}: { id: string }) {
   const context = useContext(AppContext)

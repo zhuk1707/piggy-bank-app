@@ -1,7 +1,7 @@
-import ProgressBar from "../ProgressBar/ProgressBar.tsx";
+import ProgressBar from "../../ProgressBar/ProgressBar.tsx";
 import type {FC} from "react";
-import formatNumber from "../../utils/formatNumber.ts";
-import getPercentage from "../../utils/getPercentage.ts";
+import formatNumber from "../../../utils/formatNumber.ts";
+import getPercentage from "../../../utils/getPercentage.ts";
 
 export type CardProgressProps = {
   goal: number;

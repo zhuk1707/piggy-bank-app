@@ -1,6 +1,6 @@
-import CardDescription, {type CardDescriptionProps} from "../CardDescription/CardDescription.tsx";
-import CardControls from "../CardControls/CardControls.tsx";
-import CardProgress, {type CardProgressProps} from "../CardProgress/CardProgress.tsx";
+import CardDescription, {type CardDescriptionProps} from "./CardDescription/CardDescription.tsx";
+import CardControls from "./CardControls/CardControls.tsx";
+import CardProgress, {type CardProgressProps} from "./CardProgress/CardProgress.tsx";
 import type {FC} from "react";
 
 export interface CardProps extends CardDescriptionProps, CardProgressProps {

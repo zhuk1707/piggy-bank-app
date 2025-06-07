@@ -1,5 +1,5 @@
 import type {FC} from "react";
-import type {CardProgressProps} from "../CardProgress/CardProgress.tsx";
+import type {CardProgressProps} from "../Card/CardProgress/CardProgress.tsx";
 import getPercentage from "../../utils/getPercentage.ts";
 
 const ProgressBar: FC<CardProgressProps> = ({deposit = 0, goal}) => {
