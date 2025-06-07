@@ -2,6 +2,7 @@ import Button from "../Button/Button.tsx";
 import {Plus} from "lucide-react";
 import {useContext} from "react";
 import AppContext from "../../main.tsx";
+import logo from '../../assets/logo.svg'
 
 function Header() {
   const context = useContext(AppContext)
@@ -17,8 +18,14 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="header__inner">
-          <div className="logo logo_header">piggy-bank</div>
-
+          <a className="logo logo_header" href='#'>
+            <div className="logoIcon">
+              <img src={logo} alt=""/>
+            </div>
+            <div className="logoTitle">
+              piggy-bank
+            </div>
+          </a>
           <Button
             title={"Create a Goal"}
             icon={<Plus strokeWidth={2} size={18}/>}

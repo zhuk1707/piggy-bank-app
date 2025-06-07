@@ -3,17 +3,31 @@ footer {
   padding: 1rem 0;
   border-top: 1px solid black;
   margin-top: 10rem;
-
 }
 
 .footer__inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "logo btn"
+    "copyright copyright"
 }
 
-p {
+.footer__inner .logo {
+  grid-area: logo;
+}
+
+.copyright {
   font-size: 1.2rem;
+  grid-area: copyright;
+  display: flex;
+  justify-content: center;
+}
+
+.footerButton {
+  grid-area: btn;
+  display: flex;
+  justify-content: right;
 }
