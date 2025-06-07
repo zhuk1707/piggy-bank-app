@@ -1,0 +1,52 @@
+.gridContainer > div {
+  border: 1px solid black;
+  background: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gridContainer > div > h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+
+.gridContainer {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "item1 item2 item3 item4"
+    "item5 item5 item6 item6"
+    "item5 item5 item6 item6"
+}
+
+.item1 {
+  grid-area: item1;
+}
+
+.item2 {
+  grid-area: item2;
+}
+
+.item3 {
+  grid-area: item3;
+}
+
+.item4 {
+  grid-area: item4;
+}
+
+
+.item5 {
+  grid-area: item5;
+}
+
+
+.item6 {
+  grid-area: item6;
+}

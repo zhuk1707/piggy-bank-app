@@ -2,7 +2,7 @@ import React, {createContext, type ReactNode, StrictMode, useReducer} from 'reac
 import {createRoot} from 'react-dom/client'
 import App from './App.tsx'
 
-type Goal = {
+export type Goal = {
   id: string,
   title: string,
   subtitle?: string,
