@@ -36,12 +36,14 @@ export default function CardControls({id}: { id: string }) {
       <Button
         title={"Take"} icon={<Minus size={16}/>}
         onClick={() => {
+          dispatch({type: "WITHDRAW_DEPOSIT", payload: {id: id, amount: '100'}})
         }}
       />
 
       <Button
         title={"Add"} icon={<Plus size={16}/>}
         onClick={() => {
+          dispatch({type: "UPDATE_DEPOSIT", payload: {id: id, amount: '100'}})
         }}
       />
 

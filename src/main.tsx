@@ -23,7 +23,10 @@ type StorageState = {
 type Action =
   | { type: "ADD_GOAL"; payload: Goal }
   | { type: "REMOVE_GOAL"; payload: string }
+  | { type: "UPDATE_DEPOSIT"; payload: { id: string, amount: string } }
+  | { type: "WITHDRAW_DEPOSIT"; payload: { id: string; amount: string } }
   | { type: "TOGGLE_MODAL" };
+
 
 const reducer = (state: StorageState, action: Action): StorageState => {
   switch (action.type) {
@@ -35,6 +38,7 @@ const reducer = (state: StorageState, action: Action): StorageState => {
           goalsCount: state.goalsList.goalsCount + 1,
         },
       };
+
     case "REMOVE_GOAL":
       return {
         ...state,
@@ -43,12 +47,41 @@ const reducer = (state: StorageState, action: Action): StorageState => {
           goalsCount: state.goalsList.goalsCount - 1,
         },
       };
+
+    case "UPDATE_DEPOSIT":
+      return {
+        ...state,
+        goalsList: {
+          goals: state.goalsList.goals.map(goal =>
+            goal.id === action.payload.id
+              ? {...goal, deposit: (goal.deposit ?? 0) + Number(action.payload.amount)}
+              : goal
+          ),
+          goalsCount: state.goalsList.goalsCount
+        },
+      };
+
+    case "WITHDRAW_DEPOSIT":
+      return {
+        ...state,
+        goalsList: {
+          goals: state.goalsList.goals.map(goal =>
+            goal.id === action.payload.id
+              ? {...goal, deposit: Math.max((goal.deposit ?? 0) - Number(action.payload.amount), 0)}
+              : goal
+          ),
+          goalsCount: state.goalsList.goalsCount
+        },
+      };
+
     case "TOGGLE_MODAL":
       return {...state, creatingGoalModal: !state.creatingGoalModal};
+
     default:
       return state;
   }
 };
+
 
 const defaultStorage: StorageState = {
   goalsList: {

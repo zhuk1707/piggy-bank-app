@@ -29,6 +29,7 @@ export default function App() {
     const newGoal = {
       id: (getRandomMultipleOf100()*1707).toString(),
       title: (getRandomMultipleOf100() * 1000).toString(16),
+      subtitle: 'lorem ipsum dolor sit!',
       goal: getRandomMultipleOf100(),
       deposit: getRandomMultipleOf100()
     }

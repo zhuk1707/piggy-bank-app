@@ -18,7 +18,7 @@ export default function DashboardGrid() {
 
   const overallGoalsValue = sumProperty(goals, "goal")
   const overallDeposit = sumProperty(goals, "deposit")
-  const percentage = (overallGoalsValue > 0 && overallDeposit > 0)
+  const percentage = overallGoalsValue && overallDeposit
     ? formatNumber(getPercentage(overallGoalsValue, overallDeposit))
     : 0
 
