@@ -1,18 +1,11 @@
 import Button from "../Button/Button.tsx";
 import {Plus} from "lucide-react";
-import {useContext} from "react";
-import AppContext from "../../main.tsx";
 import logo from '../../assets/logo.svg'
+import {useDispatch} from "react-redux";
+import {toggleModal} from "../../feature/modalSlice.ts";
 
 function Header() {
-  const context = useContext(AppContext)
-
-  if (!context) {
-    throw new Error("AppContext must be used within an AppProvider")
-  }
-
-  const {dispatch} = context
-
+  const dispatch = useDispatch()
 
   return (
     <header className="header">
@@ -29,11 +22,7 @@ function Header() {
           <Button
             title={"Create a Goal"}
             icon={<Plus strokeWidth={2} size={18}/>}
-            onClick={() => {
-              dispatch({
-                type: 'TOGGLE_MODAL'
-              })
-            }}
+            onClick={() => dispatch(toggleModal())}
           />
         </div>
       </div>

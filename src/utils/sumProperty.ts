@@ -1,9 +1,13 @@
-import type {Goal} from "../main.tsx";
+import type {Goal, GoalsList} from "../main.tsx";
 
 
-const sumProperty = (array: Goal[], property: keyof Goal): number => {
-  return array.reduce((total, item) => {
-    const value = item[property];
+const sumProperty = (goalsList: GoalsList, property: keyof Goal): number => {
+  const goals = goalsList.goals
+  const goalsId = goalsList.goalsId
+
+  return goalsId.reduce((total, id) => {
+    const goalObj = goals[id]
+    const value = goalObj[property];
     return typeof value === "number" ? total + value : total;
   }, 0);
 };

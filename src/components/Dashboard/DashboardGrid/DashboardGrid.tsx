@@ -1,23 +1,16 @@
 import styles from './DashboardGrid.module.css'
-import {useContext} from "react";
-import AppContext from "../../../main.tsx";
 import sumProperty from "../../../utils/sumProperty.ts";
 import getPercentage from "../../../utils/getPercentage.ts";
 import formatNumber from "../../../utils/formatNumber.ts";
 import ProgressBar from "../../ProgressBar/ProgressBar.tsx";
+import {useSelector} from "react-redux";
+import type {RootState} from "../../../store/store.ts";
 
 export default function DashboardGrid() {
-  const context = useContext(AppContext)
+  const goalsList = useSelector((state:RootState) => state.goalsList)
 
-  if (!context) {
-    throw new Error("AppContext must be used within an AppProvider")
-  }
-
-  const {state} = context
-  const {goals} = context.state.goalsList
-
-  const overallGoalsValue = sumProperty(goals, "goal")
-  const overallDeposit = sumProperty(goals, "deposit")
+  const overallGoalsValue = sumProperty(goalsList, "goal")
+  const overallDeposit = sumProperty(goalsList, "deposit")
   const percentage = overallGoalsValue && overallDeposit
     ? formatNumber(getPercentage(overallGoalsValue, overallDeposit))
     : 0
@@ -25,7 +18,7 @@ export default function DashboardGrid() {
   return (
     <div className={styles.gridContainer}>
       <div className={styles.item1}>
-        <h1>{state.goalsList.goalsCount}</h1>
+        <h1>{goalsList.goalsId.length}</h1>
         <h2>Goals</h2>
       </div>
 
