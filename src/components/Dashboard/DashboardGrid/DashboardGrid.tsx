@@ -15,6 +15,8 @@ export default function DashboardGrid() {
     ? formatNumber(getPercentage(overallGoalsValue, overallDeposit))
     : 0
 
+
+
   return (
     <div className={styles.gridContainer}>
       <div className={styles.item1}>
@@ -46,9 +48,9 @@ export default function DashboardGrid() {
         <h2>Goals Gained</h2>
       </div>
       <div className={styles.item5}>
-        <h1>&5</h1></div>
+        <h1>Stats?</h1></div>
       <div className={styles.item6}>
-        <h1>&6</h1></div>
+        <h1>Stats 2?</h1></div>
     </div>
 
   )

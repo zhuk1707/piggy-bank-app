@@ -1,7 +1,7 @@
 import Button from "../../Button/Button.tsx";
 import {Ellipsis, Minus, Plus, Trash2} from "lucide-react";
 import {useDispatch} from "react-redux";
-import {removeGoal} from "../../../feature/goalsSlice.ts";
+import {addToDeposit, removeGoal, takeFromDeposit} from "../../../feature/goalsSlice.ts";
 
 export default function CardControls({id}: { id: string }) {
   const dispatch = useDispatch();
@@ -9,6 +9,15 @@ export default function CardControls({id}: { id: string }) {
   const handleRemoveGoal = (id: string) => {
     dispatch(removeGoal(id));
   };
+
+  const handleTakeFromDeposit = (id: string) => {
+    dispatch(takeFromDeposit({id: id, amount: 100}));
+  };
+
+  const handleAddToDeposit = (id: string) => {
+    dispatch(addToDeposit({id: id, amount: 100}));
+  };
+
 
   return (
     <div className="card__controls">
@@ -31,14 +40,13 @@ export default function CardControls({id}: { id: string }) {
 
       <Button
         title={"Take"} icon={<Minus size={16}/>}
-        onClick={() => {
-        }}
+        onClick={() => handleTakeFromDeposit(id)}
       />
 
       <Button
         title={"Add"} icon={<Plus size={16}/>}
-        onClick={() => {
-        }}
+        onClick={() => handleAddToDeposit(id)}
+
       />
 
     </div>

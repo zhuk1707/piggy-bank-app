@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 export type Goal = {
   id: string;
@@ -15,10 +15,9 @@ export type GoalsList = {
 
 const initialStorage: GoalsList = {
   goals: {
-    '1': { id: '1', title: "Trip", subtitle: "Travel opens up new horizons :)", deposit: 100, goal: 2500 },
-    '2': { id: '2', title: "Trip2", subtitle: "Travel opens up new horizons, again:)", deposit: 100, goal: 2500 },
+    '1': {id: '1', title: "Trip", subtitle: "Travel opens up new horizons :)", deposit: 100, goal: 2500},
   },
-  goalsId: ['1', '2'],
+  goalsId: ['1'],
 };
 
 const goalsSlice = createSlice({
@@ -48,5 +47,5 @@ const goalsSlice = createSlice({
   },
 });
 
-export const { addGoal, removeGoal, addToDeposit, takeFromDeposit } = goalsSlice.actions;
+export const {addGoal, removeGoal, addToDeposit, takeFromDeposit} = goalsSlice.actions;
 export default goalsSlice.reducer;

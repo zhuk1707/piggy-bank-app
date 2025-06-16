@@ -5,6 +5,18 @@
   font-family: "Figtree", sans-serif;
 }
 
+:root {
+  --bright-purple: #9823c9;
+  --bright-pink: #ff68b5;
+  --bright-pinkred: #ff6b6b;
+  --bright-orange: #e3a016;
+  --bright-green: #13cc3a;
+  --bright-blue: #69d4e8;
+  --drop-shadow-filter: drop-shadow(4px 4px 0 black);
+
+}
+
+
 html {
   font-size: 10px;
 }
@@ -12,7 +24,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #efefef;
+  background: white;
 }
 
 .container {
@@ -69,6 +81,9 @@ body {
   background: white;
   padding: 2rem 3rem;
   border: 1px solid black;
+
+  filter: var(--drop-shadow-filter);
+
 }
 
 .card__header {
@@ -120,26 +135,6 @@ body {
   display: none;
 }
 
-.card__progress {
-}
-
-.card__progress-bar {
-  width: 100%;
-}
-
-.card__progress-bar_stroke {
-  height: 2rem;
-  border: 1px solid black;
-
-}
-
-.card__progress-bar_body {
-  height: 1.4rem;
-  width: 10%;
-  background: yellowgreen;
-  margin: 2px;
-}
-
 .card__finance {
   margin-top: 10px;
   display: flex;
@@ -153,3 +148,37 @@ body {
 .card__goal {
 }
 
+.createGoalForm {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.createGoalForm .row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+}
+
+.createGoalForm .row label {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.createGoalForm .row input {
+  border: 1px solid black;
+  border-radius: 0;
+  font-size: 16px;
+  padding: .6rem;
+  width: 100%;
+}
+
+.createGoalForm .row input:focus {
+  border: 1px solid black;
+  border-radius: 0;
+  outline: none;
+  filter: var(--drop-shadow-filter);
+
+}

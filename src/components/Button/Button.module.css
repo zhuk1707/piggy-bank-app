@@ -3,7 +3,8 @@
   padding:  .8rem 1.4rem;
   border-radius: 0;
   border: 1px solid black;
-  background: lightpink;
+
+  background: var(--bright-pink);
 
 
   display: flex;
@@ -16,9 +17,11 @@
 
 .btn:active,
 .btn:hover {
-  background-color: black;
-  color: lightpink;
+  /*background-color: black;*/
+  /*color: lightpink;*/
   transition: all .2s ease-out;
+  filter: drop-shadow(4px 4px 0 black);
+
 }
 
 .icon {

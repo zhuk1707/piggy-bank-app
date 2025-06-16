@@ -1,10 +1,12 @@
 .gridContainer > div {
   border: 1px solid black;
-  background: #fff;
+  filter: drop-shadow(4px 4px 0 black);
+
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .gridContainer > div > h1 {
@@ -13,11 +15,10 @@
   padding: 0;
 }
 
-
 .gridContainer {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "item1 item2 item3 item4"
@@ -27,26 +28,34 @@
 
 .item1 {
   grid-area: item1;
+  background-color: var(--bright-orange);
 }
 
 .item2 {
   grid-area: item2;
+  background-color: var(--bright-pink);
+
 }
 
 .item3 {
   grid-area: item3;
+  background-color: var(--bright-green);
+
 }
 
 .item4 {
   grid-area: item4;
+  background-color: var(--bright-blue);
 }
 
 
 .item5 {
   grid-area: item5;
+  background-color: var(--bright-pinkred);
 }
 
 
 .item6 {
   grid-area: item6;
+  background-color: var(--bright-purple);
 }
