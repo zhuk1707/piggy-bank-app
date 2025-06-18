@@ -13,6 +13,7 @@
   --bright-green: #13cc3a;
   --bright-blue: #69d4e8;
   --drop-shadow-filter: drop-shadow(4px 4px 0 black);
+  --border: 1px solid black;
 }
 
 
@@ -41,14 +42,15 @@ body {
 .card {
   background: white;
   padding: 2rem 3rem;
-  border: 1px solid black;
-
+  border: var(--border);
   filter: var(--drop-shadow-filter);
+}
 
+.card > div {
+  margin-bottom: 1rem;
 }
 
 .card__header {
-  margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

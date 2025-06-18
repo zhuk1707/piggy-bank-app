@@ -1,0 +1,38 @@
+.tagColor {
+  cursor: pointer;
+  padding-left: .4rem;
+  border: var(--border);
+  display: inline-block;
+  /*filter: var(--drop-shadow-filter);*/
+}
+
+.Purple {
+  background: #9823c9;
+}
+
+.Pink {
+  background: #ff68b5;
+}
+
+.Pinkred {
+  background: #ff6b6b;
+}
+
+.Orange {
+  background: #e3a016;
+}
+
+.Green {
+  background: #13cc3a;
+}
+
+.Blue {
+  background: #69d4e8;
+}
+
+.tag {
+  font-size: 1.2rem;
+  padding: .4rem;
+  background: white;
+}
+

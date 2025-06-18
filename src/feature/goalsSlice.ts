@@ -6,6 +6,12 @@ export type Goal = {
   subtitle?: string;
   deposit?: number;
   goal: number;
+  tags?: Tag[]
+};
+
+export type Tag = {
+  title: string;
+  color: string;
 };
 
 export type GoalsList = {
@@ -20,7 +26,11 @@ const initialStorage: GoalsList = {
       title: "Trip",
       subtitle: "Travel opens up new horizons :)",
       deposit: 1050,
-      goal: 10000
+      goal: 10000,
+      tags: [
+        {title: 'Hobby', color: 'Orange'},
+        {title: 'Friends', color: 'Purple'}
+      ]
     },
   },
   goalsId: ['1'],

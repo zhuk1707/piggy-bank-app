@@ -2,6 +2,8 @@ import CardDescription, {type CardDescriptionProps} from "./CardDescription/Card
 import CardControls from "./CardControls/CardControls.tsx";
 import CardProgress, {type CardProgressProps} from "./CardProgress/CardProgress.tsx";
 import type {FC} from "react";
+import TagsContainer from "../Tag/TagsContainer.tsx";
+
 
 export interface CardProps extends CardDescriptionProps, CardProgressProps {
   id: string
@@ -14,6 +16,7 @@ const Card: FC<CardProps> = ({id, title, subtitle, deposit, goal}) => {
         <CardDescription title={title} subtitle={subtitle}/>
         <CardControls id={id}/>
       </div>
+      <TagsContainer/>
       <CardProgress deposit={deposit} goal={goal}/>
     </div>
   );
