@@ -7,14 +7,13 @@ import {useSelector} from "react-redux";
 import type {RootState} from "../../../store/store.ts";
 
 export default function DashboardGrid() {
-  const goalsList = useSelector((state:RootState) => state.goalsList)
+  const goalsList = useSelector((state: RootState) => state.goalsList)
 
   const overallGoalsValue = sumProperty(goalsList, "goal")
-  const overallDeposit = sumProperty(goalsList, "deposit")
-  const percentage = overallGoalsValue && overallDeposit
+  const overallDeposit: number = sumProperty(goalsList, "deposit")
+  const percentage: number = overallGoalsValue && overallDeposit
     ? formatNumber(getPercentage(overallGoalsValue, overallDeposit))
     : 0
-
 
 
   return (
@@ -26,16 +25,17 @@ export default function DashboardGrid() {
 
       <div className={styles.item2}>
         <h1>
-          ${overallGoalsValue}
+          ${overallDeposit}
         </h1>
-        <h2>Overall Goal</h2>
+        <h2>Overall Deposit</h2>
+
       </div>
 
       <div className={styles.item3}>
         <h1>
-          ${overallDeposit}
+          ${overallGoalsValue}
         </h1>
-        <h2>Overall Deposit</h2>
+        <h2>Overall Goal</h2>
       </div>
 
       <div className={styles.item4}>

@@ -15,7 +15,13 @@ export type GoalsList = {
 
 const initialStorage: GoalsList = {
   goals: {
-    '1': {id: '1', title: "Trip", subtitle: "Travel opens up new horizons :)", deposit: 100, goal: 2500},
+    '1': {
+      id: '1',
+      title: "Trip",
+      subtitle: "Travel opens up new horizons :)",
+      deposit: 1050,
+      goal: 10000
+    },
   },
   goalsId: ['1'],
 };

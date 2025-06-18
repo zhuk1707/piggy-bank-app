@@ -31,3 +31,28 @@ footer {
   display: flex;
   justify-content: right;
 }
+
+
+.logo {
+  font-size: 3rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+.logoIcon {
+  height: 34px;
+  width: 34px;
+  transition: all .3s ease;
+}
+
+.logoIcon > img {
+  width: 100%;
+}
+
+.logoTitle {
+
+}

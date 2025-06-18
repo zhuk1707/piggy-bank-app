@@ -9,11 +9,11 @@ function Footer() {
     <footer className={style.footer}>
       <div className="container">
         <div className={style.footer__inner}>
-          <a className="logo logo_header" href='#'>
-            <div className="logoIcon">
+          <a className={style.logo} href='#'>
+            <div className={style.logoIcon}>
               <img src={logo} alt=""/>
             </div>
-            <div className="logoTitle">
+            <div className={style.logoTitle}>
               piggy-bank
             </div>
           </a>

@@ -1,15 +1,13 @@
-import type {Goal, GoalsList} from "../main.tsx";
-
+import type {Goal, GoalsList} from "../feature/goalsSlice.ts";
 
 const sumProperty = (goalsList: GoalsList, property: keyof Goal): number => {
   const goals = goalsList.goals
-  const goalsId = goalsList.goalsId
+  const goalsArr = Object.values(goals)
 
-  return goalsId.reduce((total, id) => {
-    const goalObj = goals[id]
-    const value = goalObj[property];
-    return typeof value === "number" ? total + value : total;
-  }, 0);
+  return goalsArr.reduce((previousValue, currentValue) => {
+    return previousValue + Number(currentValue[property])
+  }, 0 )
+
 };
 
 
